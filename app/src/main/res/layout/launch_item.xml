@@ -1,7 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:orientation="vertical"
+    android:background="#CDDC39"
+    android:layout_margin="3dp"
+    android:layout_height="80dp">
+
+
+    <TextView
+        android:id="@+id/txtMissionName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:text="Mission Name"
+         />
+
+    <TextView
+        android:id="@+id/txtMissionID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:text="Mission ID"
+        />
+
+    <TextView
+        android:id="@+id/txtLaunchYear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Launch Year"
+      android:textSize="16sp"
+        />
 
 
 </LinearLayout>

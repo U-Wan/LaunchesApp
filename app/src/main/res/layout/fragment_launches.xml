@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/black"
     tools:context=".ui.LaunchesFragment">
 
 
@@ -13,23 +12,24 @@
         android:id="@+id/txt_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="7dp"
+        android:layout_margin="15dp"
         android:background="#FAF8F6"
         android:gravity="center"
+        android:textColor="@color/black"
         android:text="@string/textview_title"
         android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/fragment_launches"
-        android:name="com.sweeft.myapp.ui.LaunchesFragment"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:background="#B9DC90"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_margin="5dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_title" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

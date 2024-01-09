@@ -5,6 +5,7 @@
     android:id="@+id/nav_graph"
     app:startDestination="@id/launchesFragment">
 
+
     <fragment
         android:id="@+id/launchesFragment"
         android:name="com.sweeft.myapp.ui.LaunchesFragment"
