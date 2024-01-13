@@ -1,12 +1,12 @@
-package com.sweeft.myapp.ui.utills
+package com.sweeft.myapp.Presentation.utills
 
 import androidx.recyclerview.widget.DiffUtil
-import com.sweeft.myapp.data.Launch
+import com.sweeft.myapp.domain.Launch
 
 class LaunchesDiffCallBack: DiffUtil.ItemCallback<Launch>(){
 
     override fun areItemsTheSame(oldItem: Launch, newItem: Launch): Boolean {
-        return oldItem.missionID == newItem.missionID
+        return oldItem.missionName == newItem.missionName
     }
 
     override fun areContentsTheSame(oldItem: Launch, newItem: Launch): Boolean {

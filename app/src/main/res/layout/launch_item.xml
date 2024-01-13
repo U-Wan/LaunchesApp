@@ -1,36 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:orientation="vertical"
-    android:background="#CDDC39"
-    android:layout_margin="3dp"
-    android:layout_height="80dp">
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="5dp">
+
+        <ImageView
+            android:id="@+id/rocket_img"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:adjustViewBounds="true"
+            android:layout_margin="3dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/starship" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:orientation="vertical"
+            >
+            <TextView
+                android:id="@+id/tv_missionName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:text="Mission Name: " />
 
 
-    <TextView
-        android:id="@+id/txtMissionName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        android:text="Mission Name"
-         />
+            <TextView
+                android:id="@+id/tv_launchYear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:text="Launch Year: " />
 
-    <TextView
-        android:id="@+id/txtMissionID"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="16sp"
-        android:text="Mission ID"
-        />
-
-    <TextView
-        android:id="@+id/txtLaunchYear"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Launch Year"
-      android:textSize="16sp"
-        />
+            <TextView
+                android:id="@+id/tv_rocketName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:text="Rocket Name: " />
 
 
-</LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_details"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:text="Details: " />
+
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+
+
+

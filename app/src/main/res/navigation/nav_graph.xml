@@ -8,7 +8,7 @@
 
     <fragment
         android:id="@+id/launchesFragment"
-        android:name="com.sweeft.myapp.ui.LaunchesFragment"
+        android:name="com.sweeft.myapp.Presentation.LaunchesFragment"
         android:label="fragment_launches"
         tools:layout="@layout/fragment_launches" />
 </navigation>

@@ -1,4 +1,4 @@
-package com.sweeft.myapp.ui
+package com.sweeft.myapp.Presentation
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

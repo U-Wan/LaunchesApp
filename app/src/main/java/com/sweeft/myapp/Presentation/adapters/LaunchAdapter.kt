@@ -1,12 +1,11 @@
-package com.sweeft.myapp.ui.adapters
+package com.sweeft.myapp.Presentation.adapters
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
-import com.sweeft.myapp.data.Launch
+import com.sweeft.myapp.domain.Launch
 import com.sweeft.myapp.databinding.LaunchItemBinding
-import com.sweeft.myapp.ui.utills.LaunchesDiffCallBack
+import com.sweeft.myapp.Presentation.utills.LaunchesDiffCallBack
 
 class LaunchAdapter:ListAdapter<Launch,LaunchViewHolder>(LaunchesDiffCallBack()){
 
