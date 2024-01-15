@@ -1,10 +1,8 @@
-package com.sweeft.myapp.paging
+package com.sweeft.launchesapp.data.api
 
-import android.util.Log
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
-import com.sweeft.myapp.data.ApiServices
-import com.sweeft.myapp.domain.Launch
+import com.sweeft.launchesapp.domain.model.Launch
 
 class LaunchesPagingSource(
     private val apiServices: ApiServices
@@ -31,9 +29,7 @@ class LaunchesPagingSource(
         }
     }
 
-
     override fun getRefreshKey(state: PagingState<Int, Launch>): Int? {
-        // Not needed for remote data source
         return null
     }
 }

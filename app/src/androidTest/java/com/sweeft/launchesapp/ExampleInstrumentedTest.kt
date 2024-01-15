@@ -1,4 +1,4 @@
-package com.sweeft.myapp
+package com.sweeft.launchesapp
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

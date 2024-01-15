@@ -1,4 +1,4 @@
-package com.sweeft.myapp
+package com.sweeft.launchesapp
 
 import org.junit.Test
 

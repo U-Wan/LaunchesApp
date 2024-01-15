@@ -1,7 +1,7 @@
-package com.sweeft.myapp.utills
+package com.sweeft.launchesapp.utills
 
 import androidx.recyclerview.widget.DiffUtil
-import com.sweeft.myapp.domain.Launch
+import com.sweeft.launchesapp.domain.model.Launch
 
 class LaunchesDiffCallBack: DiffUtil.ItemCallback<Launch>(){
 

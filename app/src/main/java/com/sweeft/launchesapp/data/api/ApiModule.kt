@@ -1,6 +1,6 @@
-package com.sweeft.myapp.data
+package com.sweeft.launchesapp.data.api
 
-import com.sweeft.myapp.utills.Constants
+import com.sweeft.launchesapp.utills.Constants
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -9,14 +9,12 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
 
-
 @Module
 @InstallIn(SingletonComponent::class)
 object AppModule {
 
     @Provides
     fun provideBaseUrl() = Constants.BASE_URL
-
 
     @Provides
     @Singleton

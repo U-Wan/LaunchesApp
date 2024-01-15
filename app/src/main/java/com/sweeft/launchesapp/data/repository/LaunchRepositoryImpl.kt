@@ -1,10 +1,11 @@
-package com.sweeft.myapp.data
+package com.sweeft.launchesapp.data.repository
 
 import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.PagingData
-import com.sweeft.myapp.domain.Launch
-import com.sweeft.myapp.paging.LaunchesPagingSource
+import com.sweeft.launchesapp.data.api.ApiServices
+import com.sweeft.launchesapp.domain.model.Launch
+import com.sweeft.launchesapp.data.api.LaunchesPagingSource
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 

@@ -1,11 +1,11 @@
-package com.sweeft.myapp.Presentation.adapters
+package com.sweeft.launchesapp.Presentation.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.paging.PagingDataAdapter
-import com.sweeft.myapp.domain.Launch
-import com.sweeft.myapp.databinding.LaunchItemBinding
-import com.sweeft.myapp.utills.LaunchesDiffCallBack
+import com.sweeft.launchesapp.databinding.LaunchItemBinding
+import com.sweeft.launchesapp.domain.model.Launch
+import com.sweeft.launchesapp.utills.LaunchesDiffCallBack
 
 class LaunchAdapter : PagingDataAdapter<Launch, LaunchViewHolder>(LaunchesDiffCallBack()) {
 

@@ -1,7 +1,7 @@
-package com.sweeft.myapp.data
+package com.sweeft.launchesapp.data.repository
 
 import androidx.paging.PagingData
-import com.sweeft.myapp.domain.Launch
+import com.sweeft.launchesapp.domain.model.Launch
 import kotlinx.coroutines.flow.Flow
 
 

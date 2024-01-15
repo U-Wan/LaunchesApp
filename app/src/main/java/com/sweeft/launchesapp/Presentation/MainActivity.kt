@@ -1,19 +1,15 @@
-package com.sweeft.myapp.Presentation
+package com.sweeft.launchesapp.Presentation
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
-import com.sweeft.myapp.R
-import com.sweeft.myapp.databinding.ActivityMainBinding
+import com.sweeft.launchesapp.R
+import com.sweeft.launchesapp.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
-
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
-    private lateinit var navController: NavController // Declare the NavController here
-
     private val navHostFragment by lazy {
         supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
     }

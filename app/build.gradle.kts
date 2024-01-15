@@ -6,11 +6,11 @@ plugins {
 }
 
 android {
-    namespace = "com.sweeft.myapp"
+    namespace = "com.sweeft.launchesapp"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.sweeft.myapp"
+        applicationId = "com.sweeft.launchesapp"
         minSdk = 27
         targetSdk = 34
         versionCode = 1

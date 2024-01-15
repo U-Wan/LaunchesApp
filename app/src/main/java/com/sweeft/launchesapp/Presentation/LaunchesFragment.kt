@@ -1,16 +1,19 @@
-package com.sweeft.myapp.Presentation
+package com.sweeft.launchesapp.Presentation
 
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
-import com.sweeft.myapp.Presentation.adapters.LaunchAdapter
-import com.sweeft.myapp.Presentation.viewmodel.LaunchesViewModel
-import com.sweeft.myapp.R
-import com.sweeft.myapp.databinding.FragmentLaunchesBinding
+import androidx.lifecycle.repeatOnLifecycle
+import com.sweeft.launchesapp.Presentation.adapters.LaunchAdapter
+import com.sweeft.launchesapp.Presentation.viewmodel.LaunchesViewModel
+import com.sweeft.launchesapp.R
+import com.sweeft.launchesapp.databinding.FragmentLaunchesBinding
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class LaunchesFragment : Fragment(R.layout.fragment_launches) {
@@ -26,13 +29,15 @@ class LaunchesFragment : Fragment(R.layout.fragment_launches) {
         recyclerViewAdapter = LaunchAdapter()
         binding.recyclerView.adapter = recyclerViewAdapter
 
-        // Call fetchData() when the fragment is created
         viewModel.fetchData()
 
-        viewLifecycleOwner.lifecycleScope.launchWhenStarted {
-            viewModel.listData.collectLatest { newDataList ->
-                recyclerViewAdapter.submitData(newDataList)
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
+                viewModel.listData.collectLatest { newDataList ->
+                    recyclerViewAdapter.submitData(newDataList)
+                }
             }
         }
+
     }
 }
