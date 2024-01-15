@@ -1,12 +1,10 @@
 package com.sweeft.myapp.data
 
+import androidx.paging.PagingData
 import com.sweeft.myapp.domain.Launch
-import retrofit2.Response
+import kotlinx.coroutines.flow.Flow
 
 
-class LaunchRepository(private val apiService: ApiService) {
-
-    suspend fun fetchData(): Response<List<Launch>> {
-        return apiService.fetchData()
-    }
+interface LaunchRepository {
+    fun getLaunches(): Flow<PagingData<Launch>>
 }

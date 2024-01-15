@@ -1,4 +1,4 @@
-package com.sweeft.myapp.Presentation.utills
+package com.sweeft.myapp.utills
 
 import androidx.recyclerview.widget.DiffUtil
 import com.sweeft.myapp.domain.Launch

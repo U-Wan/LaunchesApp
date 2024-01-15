@@ -1,39 +1,52 @@
 package com.sweeft.myapp.Presentation.viewmodel
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
+import android.nfc.tech.MifareUltralight.PAGE_SIZE
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.sweeft.myapp.data.ApiService
-import com.sweeft.myapp.data.LaunchRepository
+import androidx.paging.Pager
+import androidx.paging.PagingConfig
+import androidx.paging.PagingData
+import androidx.paging.cachedIn
+import com.sweeft.myapp.data.ApiServices
 import com.sweeft.myapp.domain.Launch
+import com.sweeft.myapp.paging.LaunchesPagingSource
+import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-    class LaunchesViewModel(private val repository: LaunchRepository) : ViewModel() {
 
-    private val _dataList = MutableLiveData<List<Launch>>()
-    val dataList: LiveData<List<Launch>> get() = _dataList
+@HiltViewModel
 
-    fun updateData(newData: List<Launch>) {
-        _dataList.value = newData
-    }
-        fun fetchData() {
-            viewModelScope.launch {
-                try {
-                    val response = repository.fetchData()
-                    if (response.isSuccessful) {
-                        _dataList.value = response.body() // Wrap the response.body() in a list
-                    } else {
-                        // Handle error
-                    }
-                } catch (e: Exception) {
-                    // Handle exception
+class LaunchesViewModel
+@Inject
+constructor(
+    private val apiService: ApiServices
+) : ViewModel() {
+
+    private val _listData = MutableStateFlow<PagingData<Launch>>(PagingData.empty())
+
+    val listData: StateFlow<PagingData<Launch>> get() = _listData
+
+    fun fetchData() {
+        viewModelScope.launch {
+            try {
+                val data = Pager(PagingConfig(pageSize = 1)) {
+                    LaunchesPagingSource(apiService)
+                }.flow.cachedIn(viewModelScope)
+
+                data.collect {
+                    _listData.value = it
+                    // Log the fetched data
+                    Log.d("LaunchesViewModel", "Fetched data: $it")
                 }
+            } catch (e: Exception) {
+                // Log or handle the exception
+                e.printStackTrace()
+                Log.e("LaunchesViewModel", "Error fetching data: ${e.message}")
             }
         }
-    fun addItem(newItem: Launch) {
-        val currentList = _dataList.value.orEmpty().toMutableList()
-        currentList.add(newItem)
-        _dataList.value = currentList
     }
 }

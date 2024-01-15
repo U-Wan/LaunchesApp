@@ -22,7 +22,6 @@ class LaunchViewHolder(private val binding: LaunchItemBinding) :
                 .placeholder(R.drawable.starship)
                 .into(binding.rocketImg)
         } else {
-            // Load a placeholder if the flickrImages list is null or empty
             Glide.with(binding.root.context)
                 .load(R.drawable.starship)
                 .placeholder(R.drawable.starship)

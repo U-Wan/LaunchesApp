@@ -2,12 +2,12 @@ package com.sweeft.myapp.Presentation.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.recyclerview.widget.ListAdapter
+import androidx.paging.PagingDataAdapter
 import com.sweeft.myapp.domain.Launch
 import com.sweeft.myapp.databinding.LaunchItemBinding
-import com.sweeft.myapp.Presentation.utills.LaunchesDiffCallBack
+import com.sweeft.myapp.utills.LaunchesDiffCallBack
 
-class LaunchAdapter:ListAdapter<Launch,LaunchViewHolder>(LaunchesDiffCallBack()){
+class LaunchAdapter : PagingDataAdapter<Launch, LaunchViewHolder>(LaunchesDiffCallBack()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LaunchViewHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -17,8 +17,6 @@ class LaunchAdapter:ListAdapter<Launch,LaunchViewHolder>(LaunchesDiffCallBack())
 
     override fun onBindViewHolder(holder: LaunchViewHolder, position: Int) {
         val item = getItem(position)
-        holder.bind(item)
+        item?.let { holder.bind(it) }
     }
-
-
 }
